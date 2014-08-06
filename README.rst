@@ -13,6 +13,7 @@ Summary
 * Lists all registered users.
 * Searches for a term in the user database.
 
+
 Installing
 ----------
 
