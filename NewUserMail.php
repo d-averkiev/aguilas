@@ -179,7 +179,7 @@ if (!isset($uid) || !isset($givenName) || !isset($sn) || !isset($mail) || !isset
 
         // If the insert went OK, we send the notification e-mail to the user
         if ($ins_r) {
-            $send = AssistedEMail("NewUserMail", $mail);
+            $send = AssistedEMail("NewUserMail", $op_mail);
         }
 
         // If the mailing went OK ... 

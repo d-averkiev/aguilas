@@ -13,7 +13,6 @@ Summary
 * Lists all registered users.
 * Searches for a term in the user database.
 
-
 Installing
 ----------
 
@@ -53,6 +52,7 @@ Translating
 -----------
 
 More information on the `wiki <http://code.google.com/p/aguilas/w/list>`_.
+
 
 
 

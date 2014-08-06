@@ -1,6 +1,6 @@
 # Makefile
 
-SHELL = sh -e
+SHELL = /bin/bash
 
 # Project data
 AUTHOR = Luis Alejandro Martínez Faneyth
@@ -53,7 +53,6 @@ PHP = $(shell which php5)
 PHPLDAP = $(shell find /usr/lib/ -name "mysql.so" | grep "php5")
 PHPMYSQL = $(shell find /usr/lib/ -name "ldap.so" | grep "php5")
 PHPMCRYPT = $(shell find /usr/lib/ -name "mcrypt.so" | grep "php5")
-PHPMHASH = $(shell find /usr/lib/ -name "mhash.so" | grep "php5")
 
 # Maintainer tasks depends
 # generatepot: generates POT template from php sources. Uses XGETTEXT.
@@ -345,15 +344,6 @@ check-instdep:
 	@if [ -z $(PHPMCRYPT) ]; then \
 		echo "[ABSENT]"; \
 		echo "If you are using Debian, Ubuntu or Canaima, please install the \"php5-mcrypt\" package."; \
-		exit 1; \
-	fi
-	@echo
-
-
-	@printf "Checking if we have PHP MHASH support ... "
-	@if [ -z $(PHPMHASH) ]; then \
-		echo "[ABSENT]"; \
-		echo "If you are using Debian, Ubuntu or Canaima, please install the \"php5-mhash\" package."; \
 		exit 1; \
 	fi
 	@echo
