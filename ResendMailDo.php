@@ -83,7 +83,7 @@ if (!isset($mail) || !isset($image_captcha)) {
             $givenName = $row['givenName'];
 
             // Sending e-mail ...
-            $send = AssistedEMail("ResendMailDo", $op_mail);
+            $send = AssistedEMail("ResendMailDo", $mail);
 
             // If the mailing went OK ... 
             if ($send) {

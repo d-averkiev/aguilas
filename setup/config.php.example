@@ -12,6 +12,9 @@ $app_name = "@@APP_NAME@@";
 //  Operator
 /// The person or group responsible for managing the application. e.g. "Venezuela Linux User Group"
 $app_operator = "@@APP_OPERATOR@@";
+// Domain
+/// Internal domain
+$int_domain = "@@INT_DOMAIN@@";
 //  Application e-mail
 /// The e-mail address that will appear as sender in all operation e-mails to registered users.
 $app_mail = "@@APP_MAIL@@";

@@ -173,18 +173,21 @@ if (!isset($uid) || !isset($mail) || !isset($token)) {
                 $in['sn'] = $row['sn'];
                 $in['cn'] = $row['givenName'] . " " . $row['sn'];
                 $in['uid'] = $row['uid'];
-                $in['mail'] = $row['mail'];
-                $mail = $in['mail'];
+                $in['mail'][0] = $row['mail'];
+		$in['mail'][1] = $row['uid'] . "@" . $int_domain;
+                $mail = $in['mail'][0];
                 $in['uidNumber'] = $lastuidnumber + 1;
                 $in['gidNumber'] = $ldap_gid["$ldap_default_group"];
                 $in['userPassword'] = $row['userPassword'];
                 $in['homeDirectory'] = "/home/" . $row['uid'];
+		$in['mailbox'] = $row['uid'] . "@" . $int_domain;;
                 $in['objectClass'][0] = "inetOrgPerson";
                 $in['objectClass'][1] = "posixAccount";
                 $in['objectClass'][2] = "top";
                 $in['objectClass'][3] = "person";
                 $in['objectClass'][4] = "shadowAccount";
                 $in['objectClass'][5] = "organizationalPerson";
+		$in['objectClass'][6] = "CourierMailAccount";
                 $in['loginShell'] = "/bin/false";
                 $in['description'] = $row['description'];
 
